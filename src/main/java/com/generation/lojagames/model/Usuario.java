@@ -14,6 +14,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "tb_usuarios")
@@ -28,6 +29,7 @@ public class Usuario {
 
 	@NotBlank(message = "O atributo Usuário é Obrigatório!")
 	@Email(message = "O atributo Usuário deve ser um email válido!")
+	@JsonIgnoreProperties("usuario")
 	private String usuario;
 
 	@NotBlank(message = "O atributo Senha é Obrigatório!")
@@ -89,4 +91,3 @@ public class Usuario {
 		this.dataNascimento = dataNascimento;
 	}
 }
-

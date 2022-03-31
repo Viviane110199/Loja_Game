@@ -2,10 +2,20 @@ package com.generation.lojagames.model;
 
 import java.time.LocalDate;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@Entity
 public class UsuarioLogin {
 
+	@Id
 	private Long id;
+	
+	@JsonIgnoreProperties
 	private String nome;
+	
 	private String usuario;
 	private String senha;
 	private String foto;
